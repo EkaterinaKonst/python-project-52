@@ -1,7 +1,7 @@
 databases:
   - name: task_manager
     databaseName: task_manager
-    user: EkaterinaKonst
+    user: task_manager
 
 services:
   - type: web
