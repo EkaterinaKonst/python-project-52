@@ -3,10 +3,7 @@ dev:
 
 PORT ?= 8000
 start:
-	poetry run gunicorn -w 5 -b 0.0.0.0:$(PORT) page_analyzer:app
-
-test-coverage:
-	poetry run pytest --cov=gendiff --cov-report xml tests/
+	poetry run gunicorn -w 5 -b 0.0.0.0:$(PORT) task_manager:app
 
 lint:
 	poetry run flake8 page_analyzer
