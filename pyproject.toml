@@ -15,6 +15,10 @@ django-bootstrap5 = "^23.3"
 python-gettext = "^5.0"
 python-dotenv = "^1.0.0"
 dj-database-url = "2.1.0"
+django-bootstrap4 = "^23.2"
+django-extensions = "^3.2.3"
+django-filter = "^23.3"
+rollbar = "^0.16.3"
 
 
 [tool.poetry.group.dev.dependencies]
