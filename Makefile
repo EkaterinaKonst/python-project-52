@@ -6,7 +6,7 @@ start:
 	poetry run gunicorn -w 5 -b 0.0.0.0:$(PORT) task_manager:app
 
 lint:
-	poetry run flake8 page_analyzer
+	poetry run flake8 task_manager
 
 build-app:
 	poetry build

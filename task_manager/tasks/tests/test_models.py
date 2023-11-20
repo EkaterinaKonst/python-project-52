@@ -25,4 +25,4 @@ class TaskModelTest(TaskTestCase):
         self.assertEqual(task.author, self.user1)
         self.assertEqual(task.status, self.status1)
         self.assertEqual(task.executor, self.user2)
-        self.assertEqual(task.labels.get(pk=2), self.label2)])
+        self.assertEqual(task.labels.get(pk=2), self.label2)
