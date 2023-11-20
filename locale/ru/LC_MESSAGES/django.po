@@ -136,7 +136,7 @@ msgstr "Создать статус"
 
 #: task_manager/statuses/views.py:52
 msgid "Status successfully changed"
-msgstr "Статус успешно изменён"
+msgstr "Статус успешно изменен"
 
 #: task_manager/statuses/views.py:54
 msgid "Change status"
