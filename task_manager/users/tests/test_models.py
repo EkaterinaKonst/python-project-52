@@ -1,8 +1,8 @@
 from task_manager.users.models import User
-from .testcase import UserTestCase
+from .testcase import BaseUserTestCase
 
 
-class UserModelTest(UserTestCase):
+class UserModelTest(BaseUserTestCase):
     def test_user_creation(self) -> None:
         user_data = self.test_user['create']['valid'].copy()
         full_name = user_data['first_name'] + ' ' + user_data['last_name']

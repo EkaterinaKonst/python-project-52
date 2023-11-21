@@ -1,8 +1,8 @@
 from task_manager.users.forms import UserForm
-from .testcase import UserTestCase
+from .testcase import BaseUserTestCase
 
 
-class UserFormTest(UserTestCase):
+class UserFormTest(BaseUserTestCase):
     def test_valid_form(self) -> None:
         user_data = self.test_user['create']['valid'].copy()
         form = UserForm(data=user_data)

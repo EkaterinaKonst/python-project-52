@@ -6,7 +6,7 @@ from task_manager.users.models import User
 
 @test_english
 @remove_rollbar
-class UserTestCase(TestCase):
+class BaseUserTestCase(TestCase):
     fixtures = ['user.json', 'status.json', 'task.json', 'label.json']
     test_user = load_data('test_user.json')
 

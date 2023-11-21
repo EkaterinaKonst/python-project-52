@@ -3,10 +3,10 @@ from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ObjectDoesNotExist
 
 from task_manager.users.models import User
-from .testcase import UserTestCase
+from .testcase import BaseUserTestCase
 
 
-class TestCreateUser(UserTestCase):
+class TestCreateUser(BaseUserTestCase):
     def test_create_valid_user(self) -> None:
         user_data = self.test_user['create']['valid'].copy()
         response = self.client.post(reverse_lazy('sign_up'), data=user_data)
@@ -160,7 +160,7 @@ class TestCreateUser(UserTestCase):
         self.assertEqual(User.objects.count(), self.count)
 
 
-class TestUpdateUser(UserTestCase):
+class TestUpdateUser(BaseUserTestCase):
     def test_update_self(self) -> None:
         self.client.force_login(self.user2)
 
@@ -198,7 +198,7 @@ class TestUpdateUser(UserTestCase):
         )
 
 
-class TestDeleteUser(UserTestCase):
+class TestDeleteUser(BaseUserTestCase):
     def test_delete_self(self) -> None:
         self.client.force_login(self.user2)
 

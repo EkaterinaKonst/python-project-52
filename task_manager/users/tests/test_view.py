@@ -1,9 +1,9 @@
 from django.urls import reverse_lazy
 
-from .testcase import UserTestCase
+from .testcase import BaseUserTestCase
 
 
-class TestListUsers(UserTestCase):
+class TestListUsers(BaseUserTestCase):
     def test_users_view(self) -> None:
         response = self.client.get(reverse_lazy('users'))
 
@@ -30,7 +30,7 @@ class TestListUsers(UserTestCase):
             self.assertContains(response, f'/users/{pk}/delete/')
 
 
-class TestCreateUserView(UserTestCase):
+class TestCreateUserView(BaseUserTestCase):
     def test_sign_up_view(self) -> None:
         response = self.client.get(reverse_lazy('sign_up'))
 
@@ -38,7 +38,7 @@ class TestCreateUserView(UserTestCase):
         self.assertTemplateUsed(response, template_name='form.html')
 
 
-class TestUpdateUserView(UserTestCase):
+class TestUpdateUserView(BaseUserTestCase):
     def test_update_self_view(self) -> None:
         self.client.force_login(self.user2)
 
@@ -68,7 +68,7 @@ class TestUpdateUserView(UserTestCase):
         self.assertRedirects(response, reverse_lazy('users'))
 
 
-class TestDeleteUserView(UserTestCase):
+class TestDeleteUserView(BaseUserTestCase):
     def test_delete_self_view(self) -> None:
         self.client.force_login(self.user3)
 
